@@ -1,47 +1,58 @@
+import javax.swing.plaf.basic.BasicBorders;
 import java.util.Scanner;
+enum month {
+    JAN,
+    FEB,
+    MAR,
+    APR,
+    MAY,
+    JUNE,
+    JULY,
+    AUG,
+    SEPT,
+    OCT,
+    NOV,
+    DEC;
+}
 
 public class Main {
     public static void main(String[] args) {
 
-
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number: ");
-        int N = sc.nextInt();
+        System.out.println("Enter the month: ");
+        String monthstr = sc.nextLine();
 
-        if(N<=12)
-        {
+        month N = month.valueOf(monthstr.toUpperCase());
+
             switch(N)
             {
-                case 1: System.out.println("Janavery");
+                case JAN: System.out.println("Janavery");
                 break;
-                case 2: System.out.println("Febuary");
+                case FEB: System.out.println("Febuary");
                     break;
-                case 3: System.out.println("March");
+                case MAR: System.out.println("March");
                     break;
-                case 4: System.out.println("April");
+                case APR: System.out.println("April");
                     break;
-                case 5: System.out.println("May");
+                case MAY: System.out.println("May");
                     break;
-                case 6: System.out.println("June");
+                case JUNE: System.out.println("June");
                     break;
-                case 7: System.out.println("July");
+                case JULY: System.out.println("July");
                     break;
-                case 8: System.out.println("August");
+                case AUG: System.out.println("August");
                     break;
-                case 9: System.out.println("September");
+                case SEPT: System.out.println("September");
                     break;
-                case 10: System.out.println("Octuber");
+                case OCT: System.out.println("Octuber");
                     break;
-                case 11: System.out.println("November");
+                case NOV: System.out.println("November");
                     break;
-                case 12: System.out.println("December");
+                case DEC: System.out.println("December");
                     break;
                 default:System.out.println("Invalid");
 
             }
         }
-        else {
-            System.out.println("Invalid Month.....!!");
-        }
+
     }
-}
