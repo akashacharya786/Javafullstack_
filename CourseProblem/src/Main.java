@@ -29,8 +29,10 @@ public class Main {
                 System.out.println("Available");
                 isCourseAvailable = true;
 
-            } else if (is) {
+            }
+            else if (isCourseAvailable == false) {
                 System.out.println("Not Available");
+                break;
 
             }
 
