@@ -1,0 +1,103 @@
+#---------------------------------------------------------------------------------------
+#EXAM:
+#---------------------------------------------------------------------------------------
+#1.Create below tables and insert data as shown: 
+#------------------------------------------------
+# Saleman Table:
+#--------------------------------------------------------------------------------------------------
+CREATE TABLE Salesman (salesman_ID int, saleman_name varchar(20),city varchar(20),commision double);
+insert into Salesman values(5001,'James Hooq','New York',0.15);
+insert into Salesman values(5002,'Nail Knite','Paris',0.13);
+insert into Salesman values(5005,'Pit Alex','London',0.11);
+insert into Salesman values(5006,'MC Lyon','Paris',0.14);
+insert into Salesman values(5003,'Lauson Hen',NULL,0.12);
+insert into Salesman values(5007,'Paul Adam','Rome',0.13);
+alter table Salesman add primary key(salesman_ID);
+select * from Salesman;
+#--------------------------------------------------------------------------------------------------
+#Customer Table:
+#--------------------------------------------------------------------------------------------------
+CREATE TABLE customer (customer_id int primary key, customer_name varchar(20),city varchar(20),grade int,salesman_ID int,foreign key(salesman_ID) references Salesman(salesman_ID));
+insert into customer values(3002,'Nick Rimando','New York',100,5001);
+insert into customer values(3005,'Graham Zusi','Califonia',200,5002);
+insert into customer values(3001,'Brad Guzan','London',NULL,NULL);
+insert into customer values(3004,'Fabin Johns','Paris',300,5006);
+insert into customer values(3007,'Brad Davis','New York',200,5001);
+insert into customer values(3009,'Geoff Camero','Berlin',100,NULL);
+insert into customer values(3008,'Julian Green','London',300,5002);
+insert into customer values(3003,'Jozy Altidor','Moncow',200,5007);
+select * from customer;
+#--------------------------------------------------------------------------------------------------
+#Order Table:
+#--------------------------------------------------------------------------------------------------
+CREATE TABLE oreder (order_no int primary key, purch_amt int,order_date date,customer_id int,foreign key(customer_id) references customer(customer_id),salesman_ID int,foreign key(salesman_ID) references Salesman(salesman_ID));
+insert into oreder values(70001,150.5,'2016-10-05',3005,5002);
+insert into oreder values(70009,270.65,'2016-09-10',3001,NULL);
+insert into oreder values(70002,65.26,'2016-10-05',3002,5001);
+insert into oreder values(70004,110.5,'2016-08-17',3009,NULL);
+insert into oreder values(70007,948.5,'2016-09-10',3005,5002);
+insert into oreder values(70005,2400.6,'2016-07-27',3007,5007);
+insert into oreder values(70008,5760,'2016-09-10',3002,5001);
+insert into oreder values(70010,1983.43,'2016-10-10',3004,5006);
+insert into oreder values(70003,2480.4,'2016-10-10',3009,NULL);
+insert into oreder values(70012,250.45,'2016-06-27',3008,5002);
+insert into oreder values(70011,75.29,'2016-08-17',3003,5007);
+select * from oreder;
+select purch_amt + 0.0 purch_amt from oreder;
+#-------------------------------------------------------------------------------------------------------------------------
+#QUERRY
+#-------------------------------------------------------------------------------------------------------------------------
+#1
+select saleman_name,commision from Salesman;
+#------------------------------------------------
+#2
+select  DISTINCT salesman_ID from oreder;
+#------------------------------------------------
+#3
+select salesman_ID,city 
+from Salesman
+where city = "paris";
+#-----------------------------------------------
+#4
+select * 
+from customer 
+where grade = 200;
+#----------------------------------------------
+#5
+select order_no,order_date,purch_amt 
+from oreder 
+where salesman_ID = 5001;
+#----------------------------------------------
+#6
+select * from customer
+where city = "New York" or grade < 100;
+#----------------------------------------------
+#7
+select * from Salesman where commision>= 0.12and commision <= 0.14;
+#-------------------------------------------------------------------
+#8
+select * from customer
+where customer_name LIKE "%N";
+#----------------------------------------------------------------------
+#9
+select * from Salesman
+where saleman_name LIKE "N__L%";
+#-------------------------------------------------------------------------
+#10
+select * from customer
+where grade IS NULL;
+#-------------------------------------------------------------------------
+#11
+select SUM(purch_amt) from oreder; 
+#--------------------------------------------------------------------------
+#12
+SELECT city,MAX(grade) from customer where grade < (select MAX(grade) from customer where grade < (select MAX(grade) from customer )) group by city;
+#-----------------------------------------------------------------------------------------------------------------------------------------------------
+#13
+SELECT MIN(purch_amt),customer_id FROM oreder WHERE purch_amt NOT IN(SELECT MIN(purch_amt) FROM oreder) GROUP BY customer_id;
+#----------------------------------------------------------------------------------------------------------------------------------------
+#15
+select customer_id, ORDER_DATE, MAX(purch_amt) from oreder group by  CUSTOMER_ID, ORDER_DATE having MAX(PURCH_AMT)>2000;
+#-------------------------------------------------------------------------------------------------------------------------------------------
+#14
+select customer_id, MAX(purch_amt) from oreder group by customer_id, order_date; 
