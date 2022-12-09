@@ -94,10 +94,10 @@ select SUM(purch_amt) from oreder;
 SELECT city,MAX(grade) from customer where grade < (select MAX(grade) from customer where grade < (select MAX(grade) from customer )) group by city;
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
 #13
-SELECT MIN(purch_amt),customer_id FROM oreder WHERE purch_amt NOT IN(SELECT MIN(purch_amt) FROM oreder) GROUP BY customer_id;
+select MIN(purch_amt),customer_id from oreder where purch_amt not in(select MIN(purch_amt) from oreder) group by customer_id;
 #----------------------------------------------------------------------------------------------------------------------------------------
 #15
-select customer_id, ORDER_DATE, MAX(purch_amt) from oreder group by  CUSTOMER_ID, ORDER_DATE having MAX(PURCH_AMT)>2000;
+select customer_id, order_date, max(purch_amt) from oreder group by  customer_id, order_date having min(purch_amt)<2000;
 #-------------------------------------------------------------------------------------------------------------------------------------------
 #14
 select customer_id, MAX(purch_amt) from oreder group by customer_id, order_date; 
