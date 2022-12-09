@@ -8,7 +8,7 @@ public class BankApp {
         int choice;
     do {
         System.out.println("\n------BANK SYSTEM APPLICATION------\n");
-        System.out.println("1.Open a New Account\n2.Deposite money to an account\n3.withdraw money from the account\n4.Close the Account\n");
+        System.out.println("1.Open a New Account\n2.Deposite money to an account\n3.withdraw money from the account\n4.display account details\n5.Close the Account\n");
         System.out.println("Enter the Choice: ");
         choice = sc.nextInt();
         switch (choice) {
@@ -21,7 +21,9 @@ public class BankApp {
             case 3:
                 BD.withdraw();
                 break;
-            case 4:
+            case 4:BD.Display_Account();
+            break;
+            case 5:
                 return;
             default:
                 System.out.println("invalid option...");
