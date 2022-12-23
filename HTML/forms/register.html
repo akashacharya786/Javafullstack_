@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="form1.html" method="post">    
+        <label>Email:</label>
+        <br>
+        <input type="email" id="email" placeholder="Enter Email" required>
+        <br>
+        <br>
+        <label for="dob" id="dobl">Date of Birth:</label>
+        <br>
+        <input type="date" id="date" min="2004-01-01" max="2022-01-01" required>
+        <br>
+        <br>
+        <label>Gender:</label>
+        <br>
+        <input type="radio" id="gender1" value="male" name="gneder"required>Male
+        <input type="radio" id="gender2" value="female" name="gneder" required>Female
+        <br>
+        <br>
+        <label for="add1" id="add1">Address</label>
+        <br>
+        <textarea id="add1" name="add1" row="4" cols="30" required></textarea>
+        <br>
+        <br>
+        <label for="city" id="city">Slect Area:</label>
+        <br>
+        <select name="city" id="city" required>
+            <option value="vizag">Vizag</option>
+            <option value="Andhra">Andhra</option>
+            <option value="Manglore">Manglore</option>
+            <option value="Manipal">Manipal</option>
+            <option value="Sulya">Sulya</option>
+        </select>
+        <br>
+        <br>
+        <label>Selct Hobbies:</label>
+        <br>
+        <input type="checkbox" id ="read" name="read" value="reading" required>
+        <label for="Read">Reading</label>
+        <br>
+        <input type="checkbox" id ="Write" name="wirte" value="writing" required>
+        <label for="write">writing</label>
+        <br>
+        <input type="checkbox" id ="Play" name="Play" value="playing" required>
+        <label for="Play">Playing</label>
+        <br>
+        <br>
+        <input type="reset" value="clear">
+        <br>
+        <br>
+        <button>Register</button>
+    </form>
+    <br>
+    <caption>Frame</caption>
+    <br>
+    <iframe src="form1.html" name="iframe1"></iframe>
+    <br>
+    <br>
+    <a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_iframe_target" target="iframe1" >Change The Frame</a>
+</body>
+</html>

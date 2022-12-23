@@ -1,0 +1,42 @@
+body{
+    background-color:ray;
+}
+h1{
+    text-align: center;
+    text-shadow: 0.5px 4px;
+}
+.container-1 p{
+    text-align: center;
+}
+.container-2 td{
+    text-align: center;
+    
+}
+.container-2 th{
+    text-transform: capitalize;
+}
+.container-3 ul li{
+    text-align: center;
+}
+.container-3 ul li a:link{
+    text-align: center;
+    text-decoration: none;
+    color: green;
+}
+.container-4 p{
+    text-align: center;
+}
+.container-4 p:nth-child(even){
+    background-color: aqua;
+    width: fit-content;
+    margin-left: 247px;
+}
+.container-4 p:nth-of-type(2n){
+    background-color: brown;
+}
+.container-2 ul li a:hover{
+    background-color: yellow;
+}
+input:focus{
+    background-color: palevioletred;
+}

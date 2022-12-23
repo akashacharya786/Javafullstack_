@@ -1,0 +1,30 @@
+body{
+    border-style: groove;
+}
+.box-1 ,.box-2,.box-3 {
+  height: 50px;
+  width: 100px;
+  background-color: pink;
+  border-style: groove;
+  border-color: black;
+  margin-left: 90px;
+
+}
+.box-4,.box-5,.box-6{
+  height: 50px;
+  width: 250px;
+  background-color: lightblue;
+  border-style: groove;
+  border-color: black;
+  margin-left: 130px;
+  margin-top: -3.5px;
+}
+.box-7{
+  height: 50px;
+  width: 383px;
+  background-color: rgb(252, 196, 92);
+  border-style: groove;
+  border-color: black;
+  margin-top: 10px;
+  margin-left: 90px;
+}

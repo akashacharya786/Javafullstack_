@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Simple Calculator</h3>
+    <form>
+        <div class="form-group">
+          <label for="formGroupExampleInput">1st Number</label>
+          <input type="text" class="form-control" id="formGroupExampleInput1" placeholder="input 1">
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">2nd Number</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="input 2">
+        </div>
+        <br>
+        <button type="button" class="btn btn-info" onclick="add()">Add</button>
+        <button type="button" class="btn btn-info" onclick="sub()">Sub</button>
+        <button type="button" class="btn btn-info" onclick="mul()">Multiply</button>
+        <button type="button" class="btn btn-info" onclick="div()">Division</button>
+      </form>
+      <br>
+      <hr>
+      Result:<hr><span id="result"></span>
+      <br>
+      <br>
+      <hr>
+      <script src = "main.js"></script>
+      
+</body>
+</html>
